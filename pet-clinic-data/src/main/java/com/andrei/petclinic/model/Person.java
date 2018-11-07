@@ -7,8 +7,8 @@ import lombok.Setter;
 @Setter
 public class Person extends BaseEntity {
 
-    public String firstName;
-    public String surname;
+    private String firstName;
+    private String surname;
 
 
 }
