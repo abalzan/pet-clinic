@@ -3,12 +3,14 @@ package com.andrei.petclinic.service.jpa;
 import com.andrei.petclinic.model.PetType;
 import com.andrei.petclinic.repositories.PetTypeRepository;
 import com.andrei.petclinic.service.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Service
+@Profile({"default"})
 public class PetTypeJpaService implements PetTypeService {
 
     private final PetTypeRepository petTypeRepository;
