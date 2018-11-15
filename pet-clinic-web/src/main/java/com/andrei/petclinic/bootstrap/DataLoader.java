@@ -2,11 +2,13 @@ package com.andrei.petclinic.bootstrap;
 
 import com.andrei.petclinic.model.*;
 import com.andrei.petclinic.service.*;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
+@RequiredArgsConstructor
 @Component
 public class DataLoader implements CommandLineRunner {
 
@@ -15,15 +17,6 @@ public class DataLoader implements CommandLineRunner {
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
     private final VisitService visitService;
-
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
-
-        this.ownerService = ownerService;
-        this.vetService = vetService;
-        this.petTypeService = petTypeService;
-        this.specialityService = specialityService;
-        this.visitService = visitService;
-    }
 
     @Override
     public void run(String... args) throws Exception {

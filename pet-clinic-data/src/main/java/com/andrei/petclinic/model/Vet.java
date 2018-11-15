@@ -1,7 +1,6 @@
 package com.andrei.petclinic.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -9,6 +8,9 @@ import java.util.Set;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity(name = "vets")
 public class Vet extends Person {
 

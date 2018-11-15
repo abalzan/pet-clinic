@@ -5,12 +5,14 @@ import com.andrei.petclinic.repositories.OwnerRepository;
 import com.andrei.petclinic.repositories.PetRepository;
 import com.andrei.petclinic.repositories.PetTypeRepository;
 import com.andrei.petclinic.service.OwnerService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@RequiredArgsConstructor
 @Service
 @Profile({"default"})
 public class OwnerJpaService implements OwnerService {
@@ -18,12 +20,6 @@ public class OwnerJpaService implements OwnerService {
     private final OwnerRepository ownerRepository;
     private final PetRepository petRepository;
     private final PetTypeRepository petTypeRepository;
-
-    public OwnerJpaService(OwnerRepository ownerRepository, PetRepository petRepository, PetTypeRepository petTypeRepository) {
-        this.ownerRepository = ownerRepository;
-        this.petRepository = petRepository;
-        this.petTypeRepository = petTypeRepository;
-    }
 
     @Override
     public Owner findBySurname(String lastName) {

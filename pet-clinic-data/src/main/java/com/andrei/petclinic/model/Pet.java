@@ -1,7 +1,6 @@
 package com.andrei.petclinic.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -10,6 +9,9 @@ import java.util.Set;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity(name = "pets")
 public class Pet extends BaseEntity {
 

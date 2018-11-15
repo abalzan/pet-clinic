@@ -1,7 +1,6 @@
 package com.andrei.petclinic.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -12,8 +11,19 @@ import java.util.Set;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity(name = "owners")
 public class Owner extends Person {
+
+    @Builder
+    public Owner(String firstName, String surname, String address, String city, String telephone, Set<Pet> pets) {
+        super(firstName, surname);
+        this.address = address;
+        this.city = city;
+        this.telephone = telephone;
+        this.pets = pets;
+    }
 
     @Column(name = "address")
     private String address;
