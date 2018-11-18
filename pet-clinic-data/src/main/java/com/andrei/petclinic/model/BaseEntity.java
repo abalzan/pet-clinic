@@ -31,4 +31,7 @@ public class BaseEntity implements Serializable {
     @LastModifiedDate
     private LocalDate updateDate;
 
+    public boolean isNew() {
+        return this.id == null;
+    }
 }
