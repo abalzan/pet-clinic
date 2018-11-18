@@ -70,4 +70,17 @@ class OwnerControllerTest {
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.view().name("notImplemented"));
     }
+
+    @Test
+    void findOwnerById() throws Exception {
+        Owner owner = Owner.builder().firstName("One").build();
+        owner.setId(1L);
+
+        Mockito.when(service.findById(Mockito.anyLong())).thenReturn(owner);
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/owners/123"))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.view().name("owners/ownerDetails"))
+                .andExpect(MockMvcResultMatchers.model().attribute("owner", Matchers.hasProperty("id", Matchers.is(1L))));
+    }
 }
