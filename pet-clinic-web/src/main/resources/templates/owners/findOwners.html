@@ -12,7 +12,7 @@
             <label class="col-sm-2 control-label">Last name </label>
             <div class="col-sm-10">
                 <input class="form-control" maxlength="80" size="30"
-                       th:field="*{lastName}"/> <span class="help-inline"><div
+                       th:field="*{surname}"/> <span class="help-inline"><div
                     th:if="${#fields.hasAnyErrors()}">
               <p th:each="err : ${#fields.allErrors()}" th:text="${err}">Error</p>
             </div></span>
